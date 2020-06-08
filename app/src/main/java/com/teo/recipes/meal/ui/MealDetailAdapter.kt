@@ -22,7 +22,7 @@ class MealDetailAdapter : ListAdapter<Meal, MealDetailAdapter.ViewHolder>(MealDi
         val meal = getItem(position)
         meal?.let {
             holder.apply {
-                createOnClickListener(meal.idMeal)?.let { it2 -> bind(it2, meal, isGridLayoutManager()) }
+                createOnClickListener(meal.idMeal).let { it2 -> bind(it2, meal) }
                 itemView.tag = meal
             }
         }
@@ -50,12 +50,10 @@ class MealDetailAdapter : ListAdapter<Meal, MealDetailAdapter.ViewHolder>(MealDi
     class ViewHolder(private val binding: ListItemMealBinding)
         : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(listener: View.OnClickListener, item: Meal,
-                 isGridLayoutManager: Boolean) {
+        fun bind(listener: View.OnClickListener, item: Meal) {
             binding.apply {
                 clickListener = listener
                 meal = item
-//                title.visibility = if (isGridLayoutManager) View.GONE else View.VISIBLE
                 executePendingBindings()
             }
         }

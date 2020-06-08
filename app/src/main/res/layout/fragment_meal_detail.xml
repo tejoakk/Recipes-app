@@ -4,7 +4,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar"
@@ -50,8 +50,7 @@
         <ScrollView
             android:id="@+id/scrollview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="79dp"
+            android:layout_height="wrap_content"
             android:alwaysDrawnWithCache="true"
             android:animateLayoutChanges="true"
             android:clipToPadding="true"
@@ -59,7 +58,7 @@
             android:isScrollContainer="true"
             android:overScrollMode="always"
             android:scrollbarStyle="insideOverlay"
-            app:layout_constraintBottom_toTopOf="@+id/progressBar"
+            app:layout_constraintBottom_toBottomOf="parent"
             tools:ignore="MissingConstraints">
 
 
@@ -70,16 +69,19 @@
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                <TextView
-                    android:id="@+id/name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/meal_name" />
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/meal_name" />
                 </TableRow>
+
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                    android:layout_height="match_parent">
+
                     <TextView
                         android:id="@+id/ingredient_title"
                         android:layout_width="match_parent"
@@ -90,7 +92,7 @@
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                    android:layout_height="match_parent">
 
                     <TextView
                         android:id="@+id/ingredient"
@@ -107,7 +109,8 @@
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                    android:layout_height="match_parent">
+
                     <TextView
                         android:id="@+id/instructions_title"
                         android:layout_width="match_parent"
@@ -115,15 +118,18 @@
                         android:labelFor="@id/instructions"
                         android:text="@string/instructionsTitle" />
                 </TableRow>
+
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                    android:layout_height="match_parent">
+
                     <TextView
                         android:id="@+id/instructions"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ellipsize="marquee"
+                        android:gravity="center_vertical"
                         android:maxLines="50"
                         android:minLines="20"
                         android:text="@string/instructions" />

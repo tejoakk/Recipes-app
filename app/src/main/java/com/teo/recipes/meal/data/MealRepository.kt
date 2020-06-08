@@ -28,7 +28,7 @@ class MealRepository @Inject constructor(private val dao: MealDao,
             networkCall = { mealRemoteDataSource.fetchMeals(strCategory) }
     ) {
         it.meals?.let { it2 -> dao.insertAll(it2) }
-        it.meals?.let { it2 -> dao.updateAll(strCategory) }
+        it.meals?.let { dao.updateAll(strCategory) }
     }
 
 

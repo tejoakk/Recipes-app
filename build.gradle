@@ -72,9 +72,3 @@ allprojects {
     }
 }
 
-spotless {
-    kotlin {
-        target "**/*.kt"
-        ktlint(ktlintVersion)
-    }
-}

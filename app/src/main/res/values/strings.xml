@@ -17,13 +17,8 @@
     <string name="settings" translatable="false">settings</string>
     <string name="category_image" translatable="false">category image</string>
     <string name="meal_image" translatable="false">meal image</string>
-    <string name="instructions" translatable="false">instructions -- Wash and soak toor dal in approx. 3 cups of water, for at least one hours. Dal will be double in volume after soaking. Drain the water.
-Cook dal with 2-1/2 cups water and add salt, turmeric, on medium high heat, until soft in texture (approximately 30 mins) it should be like thick soup.
-In a frying pan, heat the ghee. Add cumin seeds, and mustard seeds. After the seeds crack, add bay leaves, green chili, ginger and chili powder. Stir for a few seconds.
-Add tomatoes, salt and sugar stir and cook until tomatoes are tender and mushy.
-Add cilantro and garam masala cook for about one minute.
-Pour the seasoning over dal mix it well and cook for another minute.
-Serve with Naan." </string>
+    <string name="instructions" translatable="false">1. Steps for the Meat: \r\n Roast meat over medium heat for 50 minutes and salt it as you turn it.\r\n\r\n2. Steps for Ugali:\r\nBring the water and salt to a boil in a heavy-bottomed saucepan. Stir in the cornmeal slowly, letting it fall through the fingers of your hand.\r\n\r\n3. Reduce heat to medium-low and continue stirring regularly, smashing any lumps with a spoon, until the mush pulls away from the sides of the pot and becomes very thick, about 10 minutes.\r\n\r\n4.Remove from heat and allow to cool.\r\n\r\n5. Place the ugali into a large serving bowl. Wet your hands with water, form a ball and serve.\r\n\r\n6. Steps for Kachumbari: Mix the tomatoes, onions, chili and coriander leaves in a bowl.\r\n\r\n7. Serve and enjoy!
+Serve with Naan. </string>
     <string name="meal_name">Meal name</string>
     <string name="ingredients">Ingredients</string>
     <string name="instructionsTitle">Instructions</string>
