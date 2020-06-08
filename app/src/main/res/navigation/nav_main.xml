@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/fragment_category">
+
+    <fragment
+        android:id="@+id/fragment_category"
+        android:name="com.teo.recipes.category.ui.CategoryFragment"
+        android:label="category">
+
+        <action
+            android:id="@+id/action_category_fragment_to_meals_fragment"
+            app:destination="@id/fragment_meals"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_meals"
+        android:name="com.teo.recipes.meal.ui.MealFragment"
+        android:label="Category meals"
+        tools:layout="@layout/fragment_meal">
+
+        <argument
+            android:name="strCategory"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="idCategory"
+            app:argType="integer"
+            android:defaultValue="-1"/>
+
+        <action
+            android:id="@+id/action_to_meal_detail_fragment"
+            app:destination="@id/meal_detail_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/meal_detail_fragment"
+        android:name="com.teo.recipes.meal.ui.MealDetailFragment"
+        android:label="meal details"
+        tools:layout="@layout/fragment_meal_detail">
+
+        <argument
+            android:name="idMeal"
+            app:argType="integer"/>
+    </fragment>
+
+</navigation>
