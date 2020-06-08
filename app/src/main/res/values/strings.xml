@@ -12,12 +12,11 @@
     <string name="menu_item_share" translation_description="The label for the Share menu item">Share</string>
     <string name="number_of_parts">Number of parts: %d</string>
     <string name="year">Year: %d</string>
-    <string name="share_lego_set">Check out %s Lego set : %s</string>
 
     <!-- Accessibility -->
     <string name="settings" translatable="false">settings</string>
     <string name="category_image" translatable="false">category image</string>
     <string name="meal_image" translatable="false">meal image</string>
-    <string name="instructions">instructions</string>
+    <string name="instructions" translatable="false">instructions</string>
 
 </resources>
