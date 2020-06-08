@@ -20,8 +20,9 @@
 
 ###Getting Started
 
+
 This project uses the Gradle build system. To build this project, use the
-`./gradlew build` command or use "Import Project" in Android Studio.
+`./gradlew build` command or Run the app via Android Studio.
 
 There are two Gradle tasks for testing the project:
 * `connectedAndroidTest` - for running Espresso on a connected device
