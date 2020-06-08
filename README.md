@@ -2,7 +2,7 @@
  
  Android Recipes App with all meal categories, recipes list and details using ViewModel & LiveData with Retrofit, Glide in Kotlin
 
-##Dependencies
+## Dependencies
  This app demonstrates the MVVM architecture with below dependencies:
  
  * [Retrofit](https://square.github.io/retrofit/) to make api calls to an HTTP web service
@@ -18,7 +18,7 @@
  * [Navigation](https://developer.android.com/topic/libraries/architecture/navigation/) with the SafeArgs plugin for parameter passing between fragments
 
 
-###Getting Started
+### Getting Started
 
 
 This project uses the Gradle build system. To build this project, use the
