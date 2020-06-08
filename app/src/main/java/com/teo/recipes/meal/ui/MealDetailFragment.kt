@@ -74,7 +74,7 @@ private fun subscribeUi(binding: FragmentMealDetailBinding) {
             Result.Status.LOADING -> binding.progressBar.show()
             Result.Status.ERROR -> {
                 binding.progressBar.hide()
-                Snackbar.make(binding.coordinatorLayout, result.message!!, Snackbar.LENGTH_LONG).show()
+                Snackbar.make(binding.progressBar, result.message!!, Snackbar.LENGTH_LONG).show()
             }
         }
     })
@@ -88,7 +88,7 @@ private fun bindView(binding: FragmentMealDetailBinding, meal: Meal) {
         binding.instructions.text = strInstructions
        val list = getIngredientPairs().filter { it.first.isNullOrBlank().not() && it.second.isNullOrBlank().not() }
                 .map { "${it.first} ${it.second}" }
-        binding.ingredient.text = list.toString()
+        binding.ingredient.text = list.joinToString( separator = System.lineSeparator())
         this@MealDetailFragment.meal = meal
     }
 }
