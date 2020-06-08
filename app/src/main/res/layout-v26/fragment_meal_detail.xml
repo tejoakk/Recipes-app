@@ -6,9 +6,96 @@
         android:id="@+id/coordinatorLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
+        android:gravity="center"
+        android:orientation="vertical"
         tools:context="com.teo.recipes.MainActivity"
         tools:ignore="MergeRootFrame">
+
+        <ScrollView
+
+            android:id="@+id/detail_scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/fab_bottom_padding"
+            android:scrollbarAlwaysDrawHorizontalTrack="false"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbarSize="10dp"
+            android:scrollbarStyle="insideOverlay"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/image">
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/name"
+                    style="?android:attr/textAppearanceLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    tools:text="meal name" />
+
+                <TextView
+                    android:id="@+id/ingredient_title"
+                    style="?android:attr/textAppearanceLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:labelFor="@id/ingredient"
+                    android:text="@string/ingredients"
+                    app:layout_constraintTop_toBottomOf="@id/name" />
+
+
+                <TextView
+                    android:id="@+id/ingredient"
+                    style="?android:attr/textAppearanceMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="5"
+                    app:layout_constraintTop_toBottomOf="@id/ingredient_title"
+                    tools:text="@string/instructions" />
+
+
+                <TextView
+                    android:id="@+id/instructions_title"
+                    style="?android:attr/textAppearanceLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:layout_marginEnd="@dimen/margin_small"
+                    android:labelFor="@id/instructions"
+                    android:text="@string/instructionsTitle"
+                    app:layout_constraintTop_toBottomOf="@id/ingredient" />
+
+
+                <TextView
+                    android:id="@+id/instructions"
+                    style="?android:attr/textAppearanceMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_small"
+                    android:maxLines="5"
+                    tools:text="@string/instructions" />
+
+            </LinearLayout>
+
+        </ScrollView>
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar"
@@ -38,144 +125,6 @@
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 
         </com.google.android.material.appbar.AppBarLayout>
-
-        <androidx.core.widget.NestedScrollView
-            android:id="@+id/plant_detail_scrollview"
-            android:layout_width="match_parent"
-            android:layout_height="594dp"
-            android:clipToPadding="false"
-            android:paddingBottom="@dimen/fab_bottom_padding"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_constraintTop_toBottomOf="@id/image">
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/margin_small"
-                    android:layout_marginEnd="@dimen/margin_small"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:ignore="MissingConstraints"
-                    tools:layout_editor_absoluteY="24dp">
-
-
-                    <TextView
-                        android:id="@+id/name"
-                        style="?android:attr/textAppearanceLarge"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/margin_small"
-                        android:layout_marginEnd="@dimen/margin_small"
-                        tools:text="meal name" />
-                </LinearLayout>
-
-                <ProgressBar
-                    android:id="@+id/progressBar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:visibility="visible" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="235dp"
-                        android:layout_marginLeft="@dimen/margin_normal"
-                        android:layout_marginRight="@dimen/margin_normal"
-                        tools:ignore="MissingConstraints">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/ingredient_title"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/margin_small"
-                                android:layout_marginEnd="@dimen/margin_small"
-                                android:paddingLeft="14dp"
-                                android:paddingRight="14dp"
-                                android:textSize="36sp"
-                                app:layout_constraintTop_toBottomOf="@id/instructions"
-                                tools:text="Ingredients" />
-
-                            <TextView
-                                android:id="@+id/ingredient"
-                                android:layout_width="match_parent"
-                                android:layout_height="125dp"
-                                android:paddingLeft="14dp"
-                                android:paddingRight="14dp"
-                                android:textSize="16sp"
-                                app:layout_constraintTop_toBottomOf="@id/ingredient_title" />
-
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        tools:ignore="MissingConstraints"
-                        tools:layout_editor_absoluteX="16dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/instructions_title"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/margin_small"
-                                android:layout_marginEnd="@dimen/margin_small"
-                                android:paddingLeft="14dp"
-                                android:paddingRight="14dp"
-                                android:textSize="32sp"
-                                app:layout_constraintTop_toBottomOf="@id/name"
-                                tools:text="Instructions" />
-
-                            <TextView
-                                android:id="@+id/instructions"
-                                android:layout_width="match_parent"
-                                android:layout_height="295dp"
-                                android:autoSizeMaxTextSize="100sp"
-                                android:autoSizeMinTextSize="32sp"
-                                android:autoSizeStepGranularity="2sp"
-                                android:autoSizeTextType="uniform"
-                                android:ellipsize="end"
-                                android:maxLines="10"
-                                android:paddingLeft="14dp"
-                                android:paddingRight="14dp"
-                                android:textAppearance="?attr/textAppearanceListItem"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@id/ingredient_title"
-                                 />
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-
-                </LinearLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.core.widget.NestedScrollView>
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </layout>
